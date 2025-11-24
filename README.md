@@ -4,7 +4,7 @@
 
 ### Requisitos
 
-- Node.js 18+ (o compatible con ESM y versiones modernas de npm)
+- Node.js 22.14+
 
 ### Instalación
 

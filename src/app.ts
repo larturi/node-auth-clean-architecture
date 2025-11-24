@@ -1,3 +1,4 @@
+import { envs } from './config/envs.js'
 import { Server } from './presentation/server.js'
 
 (() => {
@@ -5,5 +6,9 @@ import { Server } from './presentation/server.js'
 })()
 
 async function main() {
-  new Server().start()
+  const options = {
+    port: envs.port,
+  }
+
+  await new Server(options).start()
 }
