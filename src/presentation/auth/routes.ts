@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { AuthController } from './controller.js'
+import { AuthController } from '@/presentation/auth/controller.js'
 
 export class AuthRoutes {
   static routes(): Router {

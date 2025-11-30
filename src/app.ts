@@ -1,6 +1,6 @@
-import { envs } from './config/envs.js'
-import { AppRoutes } from './presentation/routes.js'
-import { Server } from './presentation/server.js'
+import { envs } from '@/config/envs.js'
+import { AppRoutes } from '@/presentation/routes.js'
+import { Server } from '@/presentation/server.js'
 
 async function main() {
   const options = {
