@@ -22,7 +22,7 @@
     "prettier": "^3.6.2",
     "tsc-alias": "^1.8.16",
     "tsx": "^3.12.7",
-    "typescript": "^5.9.3"
+    "typescript": "6.0.0-dev.20251130"
   },
   "dependencies": {
     "env-var": "^7.5.0",

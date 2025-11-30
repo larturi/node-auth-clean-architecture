@@ -19,6 +19,7 @@
     "target": "esnext",
     "types": ["node"],
     "moduleResolution": "nodenext",
+    "ignoreDeprecations": "6.0",
 
     // Other Outputs
     "sourceMap": true,

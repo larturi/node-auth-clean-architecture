@@ -31,8 +31,8 @@ importers:
         specifier: ^3.12.7
         version: 3.14.0
       typescript:
-        specifier: ^5.9.3
-        version: 5.9.3
+        specifier: 6.0.0-dev.20251130
+        version: 6.0.0-dev.20251130
 
 packages:
 
@@ -624,8 +624,8 @@ packages:
     resolution: {integrity: sha512-OZs6gsjF4vMp32qrCbiVSkrFmXtG/AZhY3t0iAMrMBiAZyV9oALtXO8hsrHbMXF9x6L3grlFuwW2oAz7cav+Gw==}
     engines: {node: '>= 0.6'}
 
-  typescript@5.9.3:
-    resolution: {integrity: sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw==}
+  typescript@6.0.0-dev.20251130:
+    resolution: {integrity: sha512-KsAcpCYlgZmHwL8h3eqhbFbYidBQR8MeRhfP9yQvhUG4gLb8U1jYjL02dqn2jKp88+pxqpZa5qXggULszSam6g==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -1235,7 +1235,7 @@ snapshots:
       media-typer: 1.1.0
       mime-types: 3.0.2
 
-  typescript@5.9.3: {}
+  typescript@6.0.0-dev.20251130: {}
 
   undici-types@7.16.0: {}
 
