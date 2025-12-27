@@ -9,7 +9,8 @@
       "@config/*": ["config/*"],
       "@domain/*": ["domain/*"],
       "@infrastructure/*": ["infrastructure/*"],
-      "@presentation/*": ["presentation/*"]
+      "@presentation/*": ["presentation/*"],
+      "@data/*": ["data/*"]
     },
     "outDir": "./dist",
 

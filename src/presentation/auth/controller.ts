@@ -4,9 +4,14 @@ import { Request, Response } from 'express'
 
 export class AuthController {
   // DI
-  constructor(private readonly authRepository: AuthRepository) {}
+  constructor(private readonly authRepository: AuthRepository) { }
 
   registerUser = (req: Request, res: Response) => {
+
+    if (!req.body) {
+      return res.status(400).json({ error: 'Invalid request body. Required fields: name, email, password' })
+    }
+
     const [error, registerUserDto] = RegisteruserDto.create(req.body)
 
     if (error) return res.status(400).json({ error })
