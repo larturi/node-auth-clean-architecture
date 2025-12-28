@@ -4,8 +4,18 @@ import { AuthDatasource } from '@/domain/datasources/auth.datasource.js'
 import { RegisteruserDto } from '@/domain/dtos/auth/register-user.dto.js'
 import { UserEntity } from '@/domain/entities/user.entity.js'
 import { CustomError } from '@/domain/errors/custom.error.js'
+import { UserMapper } from '../mappers/user.mapper.js'
+
+type HashFuncion = (password: string) => string
+type CompareFunction = (password: string, hashedPassword: string) => boolean
 
 export class AuthDatasourceImpl implements AuthDatasource {
+
+  constructor(
+    private readonly hashPassword: HashFuncion = BcryptAdapter.hash,
+    private readonly comparePassword: CompareFunction = BcryptAdapter.compare
+  ) { }
+
   async register(registerUserDto: RegisteruserDto): Promise<UserEntity> {
     const { email, password, name } = registerUserDto
 
@@ -18,7 +28,7 @@ export class AuthDatasourceImpl implements AuthDatasource {
       }
 
       // Encriptar la contraseña antes de guardarla
-      const hashedPassword = BcryptAdapter.hash(password)
+      const hashedPassword = this.hashPassword(password)
 
       // Crear un nuevo usuario
       const newUser = await UserModel.create({
@@ -28,14 +38,7 @@ export class AuthDatasourceImpl implements AuthDatasource {
       })
       await newUser.save()
 
-      const user = new UserEntity(
-        newUser.id.toString(),
-        name,
-        email,
-        hashedPassword,
-        newUser.roles
-      )
-      return user
+      return UserMapper.userEntityFromObject(newUser)
     } catch (error) {
       if (error instanceof CustomError) {
         throw error
