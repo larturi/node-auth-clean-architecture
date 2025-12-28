@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "tsx --env-file=.env --watch src/app.ts",
+    "dev:debug": "tsx --inspect-brk --env-file=.env src/app.ts",
     "build": "tsc -p . && tsc-alias -p tsconfig.json",
     "start": "node --env-file=.env dist/app.js",
     "clean": "rm -rf dist"
