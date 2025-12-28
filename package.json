@@ -25,6 +25,7 @@
     "typescript": "6.0.0-dev.20251130"
   },
   "dependencies": {
+    "bcryptjs": "^3.0.3",
     "env-var": "^7.5.0",
     "express": "^5.1.0",
     "mongoose": "^9.0.2"
